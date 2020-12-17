@@ -32,7 +32,7 @@ class Geral extends CI_Controller {
 		];
 
 		// Guardar os dados na base de dados
-		$this->db->query('INSERT INTO cadastro (nome, email) VALUES (?,?)', $valores);
+		$this->mongo_db->query('INSERT INTO cadastro (nome, email) VALUES (?,?)', $valores);
 
 		////////////////////////////// Envio do Email //////////////////////////////
 
