@@ -44,6 +44,18 @@ export default function Home() {
 
   return (
     <div className="container" style={{ marginTop: '20px' }}>
+      {message === 'Email enviado com sucesso!' ? 
+        (
+          <div class="alert alert-success" role="alert">
+            {message}
+          </div>
+        ) :
+        (
+          <div class="alert alert-danger" role="alert">
+            {message}
+          </div>
+        )
+      }
       <div className="row">
         <div className="col-lg-6 col-12 logo-col">
           <img className="logo" src="./images/logo.png" alt="Logo" />
@@ -73,11 +85,6 @@ export default function Home() {
             <Botao type="button" onClick={() => sendMail()} style={{ height: '4em', borderRadius: '1em', cursor: 'pointer' }} className="botao btn-lg btn-block" >
               {isSending ? 'ENVIANDO EMAIL...' : 'QUERO RECEBER!'}
             </Botao>
-            {message && 
-              (
-                <p style={{ color: 'red', fontWeight: 'bold', backgroundColor: 'white', marginTop: '1rem', height: '2rem' }}>{message}</p>
-              )
-            }
           </form>
         </div>
         <div className="col-lg-6 col-12">
