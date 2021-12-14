@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import '../styles/Home.module.css'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { init } from 'emailjs-com';
 import axios from 'axios';
 
@@ -13,7 +13,15 @@ export default function Home() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState();
+  const [showMessage, setShowMessage] = useState(false);
   const [isSending, setIsSending] = useState(false);
+
+  useEffect(() => {
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 3000);
+  }, [message]);
 
   const sendMail = async() => {
     setIsSending(true);
@@ -26,7 +34,7 @@ export default function Home() {
           name,
           email
         }
-      });
+      });      
 
       const response = await axios.post('https://one-sentence-a-day.vercel.app/api/user', {
         nome: name,
@@ -42,13 +50,11 @@ export default function Home() {
     }
   }
 
-  console.log('message', message);
-
   return (
     <div className="container" style={{ marginTop: '20px' }}>
-      {message && 
+      {showMessage && 
         (
-          <div class={`alert alert-${message === 'Falha ao enviar o email' ? 'danger' : 'success'}`} style={{ position: 'fixed', width: '80%' }} role="alert">
+          <div className={`alert alert-${message === 'Falha ao enviar o email' ? 'danger' : 'success'}`} style={{ position: 'fixed', width: '80%' }} role="alert">
             {message}
           </div>
         )
