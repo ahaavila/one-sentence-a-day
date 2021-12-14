@@ -32,7 +32,6 @@ export default function Home() {
         nome: name,
         email
       });
-      console.log('response', response);
 
       setMessage('Email enviado com sucesso!');
     } catch (err) {
