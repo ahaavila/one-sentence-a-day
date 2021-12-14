@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-const client = new MongoClient(process.env.DATABASE_URL, {
+const client = new MongoClient('mongodb+srv://augusto:guv9014@omnistack.cebkf.mongodb.net/test', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
