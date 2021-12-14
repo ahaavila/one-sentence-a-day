@@ -12,7 +12,7 @@ init("user_YWHRL5p0UldXqQkZxq8QE");
 export default function Home() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState();
   const [isSending, setIsSending] = useState(false);
 
   const sendMail = async() => {
@@ -42,16 +42,13 @@ export default function Home() {
     }
   }
 
+  console.log('message', message);
+
   return (
     <div className="container" style={{ marginTop: '20px' }}>
-      {message === 'Email enviado com sucesso!' ? 
+      {message && 
         (
-          <div class="alert alert-success" role="alert">
-            {message}
-          </div>
-        ) :
-        (
-          <div class="alert alert-danger" role="alert">
+          <div class={`alert alert-${message === 'Falha ao enviar o email' ? 'danger' : 'success'}`} style={{ position: 'fixed', width: '80%' }} role="alert">
             {message}
           </div>
         )
