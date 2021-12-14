@@ -28,7 +28,7 @@ export default function Home() {
         }
       });
 
-      const response = await axios.post('http://localhost:3000/api/user', {
+      const response = await axios.post('https://one-sentence-a-day.vercel.app/api/user', {
         nome: name,
         email
       });
