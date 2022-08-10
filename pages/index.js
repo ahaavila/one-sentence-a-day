@@ -1,5 +1,3 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import '../styles/Home.module.css'
 import React, { useState, useEffect } from 'react';
 import { init } from 'emailjs-com';
@@ -12,15 +10,17 @@ init("user_YWHRL5p0UldXqQkZxq8QE");
 export default function Home() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState();
+  const [message, setMessage] = useState('');
   const [showMessage, setShowMessage] = useState(false);
   const [isSending, setIsSending] = useState(false);
 
   useEffect(() => {
-    setShowMessage(true);
-    setTimeout(() => {
-      setShowMessage(false);
-    }, 3000);
+    if (message !== '') {
+      setShowMessage(true);
+      setTimeout(() => {
+        setShowMessage(false);
+      }, 3000);
+    }
   }, [message]);
 
   const sendMail = async() => {
