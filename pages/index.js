@@ -65,7 +65,13 @@ export default function Home() {
         </div>
         <div className="col-lg-6 col-12">
           <div className="embed-responsive embed-responsive-16by9">
-            <iframe className="embed-responsive-item" src="https://www.youtube.com/embed/nqi6a6y40S4" webkitallowfullscreen="1" mozallowfullscreen="1" allowFullScreen="1" frameBorder="0" width="600px" height="360px"></iframe>
+            <iframe
+                src="https://www.youtube.com/embed/nZfy1O8R7Fk"
+                title="60 FRASES MAIS USADAS EM INGLÊS" frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                width="600px" height="360px"
+                allowFullScreen>
+            </iframe>
           </div>
         </div>
       </div>
