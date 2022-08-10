@@ -64,15 +64,18 @@ export default function Home() {
           <img className="logo" src="./images/logo.png" alt="Logo" />
         </div>
         <div className="col-lg-6 col-12">
-          <div className="embed-responsive embed-responsive-16by9">
+          {/*<div className="embed-responsive embed-responsive-21by9 video">*/}
             <iframe
                 src="https://www.youtube.com/embed/nZfy1O8R7Fk"
+                className="embed-responsive-item"
+                height="100%"
+                width="80%"
+                id="video"
                 title="60 FRASES MAIS USADAS EM INGLÊS" frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                width="600px" height="360px"
                 allowFullScreen>
             </iframe>
-          </div>
+          {/*</div>*/}
         </div>
       </div>
 
