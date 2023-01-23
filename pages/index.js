@@ -29,7 +29,7 @@ export default function Home() {
       await axios.post('https://api.emailjs.com/api/v1.0/email/send', {
         user_id: 'user_YWHRL5p0UldXqQkZxq8QE',
         service_id: 'service_gxkb4se',
-        template_id: 'template_84us92r',
+        template_id: 'template_dkwxm1s',
         template_params: {
           name,
           email
